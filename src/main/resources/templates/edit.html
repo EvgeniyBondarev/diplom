@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h2>
+    <a href="/main">Main</a>
+    <a href="/main?logout">Log out</a>
+</h2>
+<h1>ФИО: <span th:text="${person.getFio()}">ФИО</span></h1>
+
+<h2>Возраст: <span th:text="${person.getAge()}">99999</span></h2>
+<h2>Город проживания: <span th:text="${person.getCity()}">Город проживания</span></h2>
+<h2>Телефон: <span th:text="${person.getPhone()}">+12345678900</span></h2>
+<h2>Фото: <img th:src="${person.getPhoto()}" width="300"></h2>
+
+<form th:action="@{/edit}" th:object="${person}" method="post">
+    <h2>Github: </h2>
+    <input type="text" style="width: 300px" th:field="*{github}" th:value="${person.getGithub()}"/> <br>
+    <h2>Социальные сети: </h2>
+    <input type="text" style="width: 300px" th:field="*{socialNetwork}" th:value="${person.getSocialNetwork()}"/> <br>
+    <h2>Предыдущее место работы: </h2>
+    <textarea type="text" style="width: 300px; height:100px" th:field="*{resume}" th:text="${person.getResume()}"></textarea><br>
+    <input type="submit" value="Сохранить"/>
+</form>
+</body>
+</html>

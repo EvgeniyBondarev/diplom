@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body >
+<h2>
+    <a href="/edit">Edit</a>
+    <a href="/main?logout">Log out</a>
+</h2>
+<h1>ФИО: <span th:text="${person.getFio()}">ФИО</span></h1>
+  <h2>Возраст: <span th:text="${person.getAge()}">99999</span></h2>
+  <h2>Город проживания: <span th:text="${person.getCity()}">Город проживания</span></h2>
+  <h2>Телефон: <span th:text="${person.getPhone()}">+12345678900</span></h2>
+  <h2>Фото: <img th:src="${person.getPhoto()}" width="300"></h2>
+
+  <h2>Github: <a th:href="${person.getGithub()}">Github</a> </h2>
+  <h2>Социальные сети:  <a th:href="${person.getSocialNetwork()}">СоцСеть</a> </h2>
+  <h2>Предыдущее место работы: <span th:text="${person.getResume()}"></span></h2>
+  <!---->
+  </body>
+  </html>
